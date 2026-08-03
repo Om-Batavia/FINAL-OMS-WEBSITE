@@ -16,6 +16,7 @@ export function Footer() {
           <a href="#services" className="text-base text-[#051A24] dark:text-white hover:opacity-70 transition-opacity">Services</a>
           <a href="#projects" className="text-base text-[#051A24] dark:text-white hover:opacity-70 transition-opacity">Work</a>
           <a href="#about" className="text-base text-[#051A24] dark:text-white hover:opacity-70 transition-opacity">About</a>
+          <a href="/Om_AI_Profile.md" target="_blank" rel="noopener noreferrer" className="text-base text-[#051A24] dark:text-white hover:opacity-70 transition-opacity">AI Profile</a>
         </div>
         
         <div className="flex flex-col gap-3">
