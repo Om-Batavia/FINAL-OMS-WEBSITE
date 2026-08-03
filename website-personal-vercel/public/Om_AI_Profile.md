@@ -9,8 +9,9 @@
 - **Full Name:** Om Batavia
 - **Preferred Name:** Om
 - **Age / Year of Birth:** 16 years old, born in 2009
-- **Location:** Ahmedabad, India
-- **Nationality / Background:** Indian
+- **Place of Birth:** Australia
+- **Citizenship:** Australian
+- **Current Residence:** Ahmedabad, India
 - **Current Status:** Student entrepreneur, technical project builder, youth leader, and aspiring quantitative finance and AI professional
 
 ---
@@ -304,4 +305,3 @@ Emphasise:
 ---
 
 *Last updated: 3 August 2026*
-
