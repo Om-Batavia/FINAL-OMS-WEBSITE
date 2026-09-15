@@ -1,0 +1,4 @@
+/website-personal-vercel/node_modules/
+/website-personal-vercel/dist/
+*.tsbuildinfo
+

@@ -20,8 +20,9 @@ export function Footer() {
         </div>
         
         <div className="flex flex-col gap-3">
-          <a href="https://x.com" target="_blank" rel="noreferrer" className="text-base text-[#051A24] dark:text-white hover:opacity-70 transition-opacity">x.com</a>
-          <a href="https://www.linkedin.com/in/om-batavia-071bb0346/" target="_blank" rel="noopener noreferrer" className="text-base text-[#051A24] dark:text-white hover:opacity-70 transition-opacity">LinkedIn</a>
+          <a href="https://github.com/Om-Batavia" target="_blank" rel="me noopener noreferrer" className="text-base text-[#051A24] dark:text-white hover:opacity-70 transition-opacity">GitHub</a>
+          <a href="https://www.linkedin.com/in/om-batavia-071bb0346/" target="_blank" rel="me noopener noreferrer" className="text-base text-[#051A24] dark:text-white hover:opacity-70 transition-opacity">LinkedIn</a>
+          <a href="https://www.instagram.com/omraces/" target="_blank" rel="me noopener noreferrer" className="text-base text-[#051A24] dark:text-white hover:opacity-70 transition-opacity">Instagram · @omraces</a>
         </div>
       </div>
     </footer>

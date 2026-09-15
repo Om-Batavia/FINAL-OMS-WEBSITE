@@ -6,31 +6,31 @@ const certificationsData = [
     title: "JuniorMBA in Data Analytics",
     issuer: "Clever Harvey (Samsonite Project)",
     image: "/certificates/clever-harvey.jpg",
-    description: "Completed a rigorous JuniorMBA program focused on Data Analytics, solving real-world business challenges and creating data-driven strategies in collaboration with Samsonite."
+    description: "Completed the JuniorMBA in Data Analytics with a Samsonite project."
   },
   {
     title: "Junior MBA Foundation Year",
     issuer: "Growth Valley Community",
     image: "/certificates/growth-valley.jpg",
-    description: "Awarded with distinction for completing year 1 of the Teen Entrepreneur Club three-year program under the mentorship of industry experts and Ivy League graduates."
+    description: "Completed year one of the Teen Entrepreneur Club program with distinction."
   },
   {
     title: "Blue Ocean Student Entrepreneurs",
     issuer: "Blue Ocean Competition",
     image: "/certificates/blue-ocean.png",
-    description: "Successfully mastered the fundamentals of Blue Ocean Strategy, learning how to develop innovative business pitches for the world's most prestigious virtual pitch competition."
+    description: "Studied Blue Ocean Strategy and business pitch development."
   },
   {
     title: "Letter of Academic Achievement",
     issuer: "Ashoka University (Prof. Debayan Gupta)",
     image: "/certificates/ashoka-letter.jpg",
-    description: "Recognized for outstanding performance in 'AI for Tomorrow's World'. Commended for deep engagement, curiosity, and insightful contributions to advanced AI and ML concepts."
+    description: "Received a letter of academic achievement for 'AI for Tomorrow's World'."
   },
   {
     title: "Horizons Achievers Programme",
     issuer: "Ashoka University",
     image: "/certificates/ashoka-poster.jpg",
-    description: "Selected for the prestigious Ashoka Horizons Achievers Programme in Computer Science, joining a highly competitive cohort of young scholars exploring advanced technological paradigms."
+    description: "Selected for the Ashoka Horizons Achievers Programme in Computer Science."
   },
   {
     title: "Technology Certificate",
@@ -62,6 +62,8 @@ export function CertificationsSection() {
                   <img 
                     src={cert.image} 
                     alt={cert.title} 
+                    loading="lazy"
+                    decoding="async"
                     className="w-full h-full object-contain bg-white dark:bg-[#07141C] p-3 group-hover:scale-[1.025] transition-transform duration-500"
                   />
                 ) : (

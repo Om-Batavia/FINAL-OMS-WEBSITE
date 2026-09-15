@@ -5,9 +5,11 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build",
+    "build": "tsc -b && vite build && vite build --ssr src/entry-server.tsx --outDir dist/server && node scripts/prerender.mjs",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "verify:seo": "node scripts/verify-seo.mjs",
+    "test:reviews": "node --test supabase/functions/portfolio-reviews/validation.test.ts"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.2.4",

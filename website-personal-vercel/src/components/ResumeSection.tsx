@@ -18,49 +18,11 @@ const experiences: ExperienceItem[] = [
   {
     company: "ALTSELF",
     role: "Founder",
-    dates: "April 2026 - Present",
+    dates: "Apr 2026 - Present",
     lane: "AI infrastructure",
     icon: BrainCircuit,
     accent: "from-sky-200 to-indigo-200 dark:from-sky-500/20 dark:to-indigo-500/20",
-    description: ["Founder of ALTSELF, building AI orchestration infrastructure."]
-  },
-  {
-    company: "Smart Kirana (Smart Invoices)",
-    role: "Founder",
-    dates: "June 2025 - Present",
-    lane: "Local business AI",
-    icon: Store,
-    accent: "from-emerald-200 to-cyan-200 dark:from-emerald-500/20 dark:to-cyan-500/20",
-    description: [
-      "Founded Smart Invoices, an AI-powered billing and inventory management platform designed for India's local shops.",
-      "Help kiranas, retailers, and wholesalers save time by automatically extracting data from invoices, reducing manual errors.",
-      "Provide real-time insights, such as restock alerts, sales tracking, and expense management.",
-      "Developed in collaboration with the Head of Cybersecurity at Microsoft India."
-    ]
-  },
-  {
-    company: "The Riverside School",
-    role: "Music Club President",
-    dates: "Jan 2024 - Present",
-    lane: "Creative leadership",
-    icon: Mic2,
-    accent: "from-fuchsia-200 to-rose-200 dark:from-fuchsia-500/20 dark:to-rose-500/20",
-    description: [
-      "Lead music club programming and help organize performances, rehearsals, and student participation.",
-      "Coordinate with peers and school teams to create creative opportunities across the community."
-    ]
-  },
-  {
-    company: "The Riverside School",
-    role: "Debate Club President",
-    dates: "Jan 2022 - Present",
-    lane: "Communication",
-    icon: MessageSquare,
-    accent: "from-amber-200 to-orange-200 dark:from-amber-500/20 dark:to-orange-500/20",
-    description: [
-      "Lead debate club activity, encouraging argumentation, public speaking, research, and structured thinking.",
-      "Support club discussions and inter-school participation through preparation and peer mentorship."
-    ]
+    description: ["Building ALTSELF, a routing layer that selects AI models by task complexity, quality, latency, and cost."]
   },
   {
     company: "The Riverside School",
@@ -72,35 +34,69 @@ const experiences: ExperienceItem[] = [
     description: [
       "Planned school-wide events and inter-school competitions focused on innovation and learning.",
       "Taught and mentored students on artificial intelligence concepts and practical applications.",
-      "Collaborated with peers to design learning experiences that build a culture of experimentation."
+    ]
+  },
+  {
+    company: "Smart Kirana (Smart Invoices)",
+    role: "Founder",
+    dates: "Jun 2025 - Present",
+    lane: "Local business AI",
+    icon: Store,
+    accent: "from-emerald-200 to-cyan-200 dark:from-emerald-500/20 dark:to-cyan-500/20",
+    description: [
+      "Built and deployed Smart Invoices, an inventory system for Indian retailers and wholesalers, using FastAPI, React, and PostgreSQL.",
+      "Added invoice extraction, product matching, low-stock reports, and purchase summaries.",
+      "Received mentorship from the Head of Cybersecurity at Microsoft India."
+    ]
+  },
+  {
+    company: "The Riverside School",
+    role: "Music Club President",
+    dates: "Jan 2024 - Present",
+    lane: "Creative leadership",
+    icon: Mic2,
+    accent: "from-fuchsia-200 to-rose-200 dark:from-fuchsia-500/20 dark:to-rose-500/20",
+    description: [
+      "Lead the music club and help organize student performances and rehearsals.",
+    ]
+  },
+  {
+    company: "The Riverside School",
+    role: "Debate Club President",
+    dates: "Jan 2022 - Present",
+    lane: "Communication",
+    icon: MessageSquare,
+    accent: "from-amber-200 to-orange-200 dark:from-amber-500/20 dark:to-orange-500/20",
+    description: [
+      "Lead debate club discussions and help students prepare for inter-school participation.",
     ]
   }
 ];
 
 const growthProgression = [
   {
-    role: "Intern",
-    org: "Growth Valley Community",
-    dates: "Feb 2025 - Present",
-    detail: "Contributed to AI-driven, startup-style initiatives focused on innovation, problem-solving, and real-world project execution."
+
+    role: "Chief Executive Officer & Co-founder",
+    org: "TEC Teen Shop",
+    dates: "Mar 2026 - Present",
+    detail: "Lead TEC Teen Shop after serving as Head of Sourcing and Shipping. Contributed to operations supporting more than 200 completed orders."
+  },
+  {
+    role: "Head of Sourcing and Shipping",
+    org: "TEC Teen Shop",
+    dates: "Jun 2025 - Present",
+    detail: "Built supplier networks, negotiated vendor terms, and set up sourcing processes."
   },
   {
     role: "Team Lead",
     org: "Growth Valley Community",
     dates: "Apr 2025 - Present",
-    detail: "Led a team of 15 peers, driving strategy, execution, and innovation across multiple projects."
+    detail: "Led 15 peers across multiple projects at Growth Valley Community."
   },
-  {
-    role: "Head of Sourcing and Shipping",
-    org: "TEC Teen Shop",
-    dates: "June 2025 - Present",
-    detail: "Built supplier networks, negotiated vendor terms, and created sourcing systems that keep operations fast and reliable."
-  },
-  {
-    role: "Chief Executive Officer",
-    org: "TEC Teen Shop",
-    dates: "Mar 2026 - Present",
-    detail: "Lead strategy, growth, and execution as the business moves from scrappy operations into a more scalable venture."
+  {    role: "Intern",
+    org: "Growth Valley Community",
+    dates: "Feb 2025 - Present",
+    detail: "Contributed to AI and startup projects."
   }
 ];
 
@@ -111,10 +107,9 @@ const education = [
 ];
 
 const skills = [
-  "Full-Stack Development", "AI/ML Applications", "Project-Based Innovation", 
-  "Educational Technology", "Teaching", "Communication", 
-  "Sourcing & Operations", "Team Leadership", "Public Speaking",
-  "Debate", "Event Planning", "Music Leadership", "Critical Thinking"
+  "Python", "FastAPI", "React", "PostgreSQL", "SQLAlchemy", "Git", "Teaching",
+  "Supplier Sourcing", "Vendor Negotiation", "Team Leadership",
+  "Public Speaking", "Debate", "Event Planning"
 ];
 
 export function ResumeSection() {
@@ -134,7 +129,7 @@ export function ResumeSection() {
         {/* Summary */}
         <div ref={refSummary} className="mb-20 text-base md:text-lg text-[#051A24] dark:text-[#E0EBF0] leading-relaxed">
           <p>
-            Dynamic high school student with hands-on experience in entrepreneurship, technology, and community leadership. Skilled in full-stack development, AI/ML applications, and project-based innovation, with strong extracurricular engagement in go-karting, basketball, and music.
+            Student at The Riverside School, founder of ALTSELF and Smart Invoices, and CEO of TEC Teen Shop. Building AI workflows for model routing and invoice processing. Led 15 peers at Growth Valley Community and taught students about AI.
           </p>
         </div>
 
@@ -147,9 +142,9 @@ export function ResumeSection() {
             <div className="relative p-6 md:p-8">
               <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-8">
                 <div>
-                  <p className="font-mono text-xs uppercase tracking-[0.22em] text-white/55 mb-3">Experience OS</p>
+                  <p className="font-mono text-xs uppercase tracking-[0.22em] text-white/55 mb-3">Current and recent roles</p>
                   <h4 className="font-['PP_Mondwest'] text-[36px] md:text-[52px] leading-none">
-                    Builder mode, live.
+                    Building and leading.
                   </h4>
                 </div>
                 <div className="grid grid-cols-2 gap-2 text-xs">
@@ -179,13 +174,13 @@ export function ResumeSection() {
                         <p className="text-sm opacity-70">{exp.role}</p>
                         <h5 className="text-xl font-semibold mt-1">{exp.company}</h5>
                         <p className="text-xs opacity-60 mt-2">{exp.dates}</p>
-                        <div className="mt-5 flex flex-col gap-2">
-                          {exp.description.slice(0, 2).map((desc, j) => (
-                            <p key={j} className="text-sm leading-relaxed opacity-75">
+                        <ul className="mt-5 flex list-disc flex-col gap-2 pl-4">
+                          {exp.description.map((desc, j) => (
+                            <li key={j} className="text-sm leading-relaxed opacity-75">
                               {desc}
-                            </p>
+                            </li>
                           ))}
-                        </div>
+                        </ul>
                       </div>
                     </article>
                   );
@@ -198,7 +193,7 @@ export function ResumeSection() {
                         <Rocket size={22} />
                       </div>
                       <div>
-                        <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-[#051A24]/45 mb-2">Current progression</p>
+                        <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-[#051A24]/70 mb-2">Business experience</p>
                         <h5 className="text-xl font-semibold">Growth Valley + TEC Teen Shop</h5>
                         <p className="text-sm text-[#273C46] mt-1">Team Lead at Growth Valley and CEO at TEC Teen Shop</p>
                         <div className="flex flex-wrap gap-2 mt-4">
@@ -212,8 +207,8 @@ export function ResumeSection() {
                       </div>
                     </div>
                     <span className="inline-flex items-center justify-center gap-2 rounded-full border border-[#051A24]/10 px-4 py-2 text-sm transition-colors group-open:bg-[#051A24] group-open:text-white">
-                      <span className="group-open:hidden">Open the run</span>
-                      <span className="hidden group-open:inline">Close the run</span>
+                      <span className="group-open:hidden">View experience</span>
+                      <span className="hidden group-open:inline">Hide experience</span>
                       <ChevronDown size={16} className="transition-transform group-open:rotate-180" />
                     </span>
                   </summary>
@@ -258,7 +253,7 @@ export function ResumeSection() {
 
           {/* Skills & Interests */}
           <div ref={refSkills}>
-            <h3 className="text-sm font-mono text-[#273C46] dark:text-[#E0EBF0] mb-8 uppercase tracking-widest border-b border-gray-200 dark:border-white/20 pb-4">Top Skills</h3>
+            <h3 className="text-sm font-mono text-[#273C46] dark:text-[#E0EBF0] mb-8 uppercase tracking-widest border-b border-gray-200 dark:border-white/20 pb-4">Skills</h3>
             <div className="flex flex-wrap gap-2 mb-10">
               {skills.map((skill, i) => (
                 <span key={i} className="px-4 py-2 bg-white dark:bg-[#0D212C] border border-gray-200 dark:border-white/20 rounded-full text-sm text-[#051A24] dark:text-white shadow-sm dark:shadow-none">

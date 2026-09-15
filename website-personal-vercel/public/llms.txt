@@ -1,0 +1,34 @@
+# Om Batavia
+
+> Personal portfolio of Om Batavia, an AI systems builder and student entrepreneur in Ahmedabad, India.
+
+Canonical website: https://www.ombatavia.com/
+
+## Core work
+
+- Smart Invoices / Smart Kirana: AI-assisted supplier invoice extraction, inventory tracking, and restock workflows for Indian retailers and wholesalers.
+- ALTSELF: AI model-routing infrastructure that balances task complexity, output quality, latency, and cost.
+- AI Lost & Found: visual and metadata matching concept with QR-assisted claim flows for campuses and venues.
+
+## Profile
+
+- Founder roles: ALTSELF and Smart Invoices.
+- TEC Teen Shop CEO and Growth Valley Team Lead.
+- Topics: AI orchestration, invoice automation, retail systems, visual matching, full-stack development, and product engineering.
+- Location: Ahmedabad, Gujarat, India.
+
+## Primary pages
+
+- Home: https://www.ombatavia.com/
+- Smart Invoices: https://www.ombatavia.com/projects/smart-invoices/
+- ALTSELF: https://www.ombatavia.com/projects/altself/
+- AI Lost & Found: https://www.ombatavia.com/projects/ai-lost-and-found/
+- Detailed AI profile: https://www.ombatavia.com/Om_AI_Profile.md
+
+## Verified profiles
+
+- LinkedIn: https://www.linkedin.com/in/om-batavia-071bb0346/
+- Instagram: https://www.instagram.com/omraces/
+- GitHub: https://github.com/Om-Batavia
+
+Contact: ombatavia23@gmail.com

@@ -89,6 +89,8 @@ export function PartnerSection() {
               <img 
                 src="/Photos/om-vietnam-bridge.jpeg" 
                 alt="Om Batavia" 
+                loading="lazy"
+                decoding="async"
                 className="h-9 w-9 rounded-full object-cover bg-gray-200 dark:bg-[#1A3644]"
               />
             </span>

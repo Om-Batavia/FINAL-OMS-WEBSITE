@@ -36,6 +36,8 @@ export function TestimonialSection() {
           <img 
             src="/Photos/om-lanterns.png" 
             alt="Om Batavia"
+            loading="lazy"
+            decoding="async"
             className="w-full h-full object-cover object-center"
           />
         </div>

@@ -5,14 +5,14 @@ const proofItems = [
   {
     icon: Building2,
     value: '3',
-    label: 'Founder roles',
+    label: 'Founder & co-founder roles',
     detail: 'ALTSELF, Smart Invoices, TEC Teen Shop'
   },
   {
     icon: BrainCircuit,
-    value: '5+',
-    label: 'AI and business builds',
-    detail: 'From invoice extraction to model routing'
+    value: '200+',
+    label: 'Orders completed by TEC Teen Shop',
+    detail: 'Contributed to sourcing, shipping, and operations'
   },
   {
     icon: Award,
@@ -23,8 +23,8 @@ const proofItems = [
   {
     icon: GraduationCap,
     value: '200+',
-    label: 'Students impacted',
-    detail: 'GenAI and digital skills curriculum through Jumpstart'
+    label: 'Students reached by Jumpstart',
+    detail: 'Led the initiative and helped design its digital skills curriculum'
   }
 ];
 
@@ -40,7 +40,7 @@ export function ProofSnapshot() {
               Proof snapshot
             </p>
             <h2 className="font-['PP_Mondwest'] text-[34px] md:text-[48px] leading-none">
-              Building early, shipping seriously.
+              Projects, roles, and experience.
             </h2>
           </div>
           <p className="max-w-md text-sm md:text-base text-white/70 dark:text-[#051A24]/70 leading-relaxed">

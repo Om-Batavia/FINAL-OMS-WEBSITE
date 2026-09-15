@@ -1,45 +1,7 @@
 import { AlertTriangle, ArrowRight, BarChart3, BadgeCheck, Bell, Camera, CheckCircle, ClipboardList, CreditCard, DatabaseZap, Download, FileText, Gauge, GitBranch, Heart, Home, MessageCircle, Package, Plus, QrCode, Search, Server, ShieldCheck, Sparkles, Trophy, Upload, User, Zap } from 'lucide-react';
 import { useInViewAnimation } from '../hooks/useInViewAnimation';
-
-type ProjectKind = 'invoices' | 'altself' | 'lost-found';
-
-const projects: Array<{
-  title: string;
-  kicker: string;
-  problem: string;
-  solution: string;
-  impact: string;
-  role: string;
-  kind: ProjectKind;
-}> = [
-  {
-    title: 'Smart Invoices (Smart Kirana)',
-    kicker: 'AI for local retail operations',
-    problem: "Kirana stores lose time and accuracy when invoice, stock, and expense data stay trapped in paper or WhatsApp images.",
-    solution: 'An AI billing and inventory workflow that extracts invoice data, tracks stock movement, and flags restock needs.',
-    impact: 'Built for Indian retailers and wholesalers, with mentorship from the Head of Cybersecurity at Microsoft India.',
-    role: 'Founder - product, AI workflow, business systems',
-    kind: 'invoices'
-  },
-  {
-    title: 'ALTSELF',
-    kicker: 'Model routing infrastructure',
-    problem: 'Expensive AI models are often used for simple tasks, making products slower and more costly than they need to be.',
-    solution: 'A routing layer that chooses a model based on task complexity, expected quality, latency, and cost.',
-    impact: 'Designed to help teams keep output quality high while avoiding unnecessary AI spend.',
-    role: 'Founder - orchestration logic, product direction',
-    kind: 'altself'
-  },
-  {
-    title: 'AI Lost & Found',
-    kicker: 'Visual matching for campuses and venues',
-    problem: 'Lost item desks rely on manual matching, vague descriptions, and repeated back-and-forth with owners.',
-    solution: 'A lightweight matching system that compares item images and metadata, then supports claim flows through QR access.',
-    impact: 'Prototype concept for schools, campuses, and high-footfall venues that need faster item recovery.',
-    role: 'Builder - matching flow, interface concept, user journey',
-    kind: 'lost-found'
-  }
-];
+import { projects } from '../data/projects';
+import type { Project, ProjectKind } from '../data/projects';
 
 function SmartInvoicesMockup() {
   return (
@@ -77,11 +39,11 @@ function SmartInvoicesMockup() {
           <header className="rounded-2xl bg-white border border-slate-200 shadow-sm px-4 py-3 flex items-center justify-between">
             <div>
               <p className="text-lg font-semibold">Upload Invoice</p>
-              <p className="text-xs text-slate-500">Convert supplier invoices into inventory updates</p>
+              <p className="text-xs text-slate-600">Convert supplier invoices into inventory updates</p>
             </div>
             <div className="hidden md:flex items-center gap-3">
               <div className="h-9 w-44 rounded-lg bg-slate-100 flex items-center px-3 text-xs text-slate-400">Search...</div>
-              <Bell className="w-5 h-5 text-slate-500" />
+              <Bell className="w-5 h-5 text-slate-600" />
             </div>
           </header>
 
@@ -97,9 +59,9 @@ function SmartInvoicesMockup() {
                 <div key={label as string} className="rounded-2xl bg-white border border-slate-200 p-4 shadow-sm">
                   <div className="flex items-start justify-between">
                     <div>
-                      <p className="text-xs text-slate-500">{label as string}</p>
+                      <p className="text-xs text-slate-600">{label as string}</p>
                       <p className="text-2xl font-bold mt-1">{value as string}</p>
-                      <p className="text-xs text-emerald-600 mt-2">+12 this week</p>
+                      <p className="text-xs text-emerald-700 mt-2">+12 this week</p>
                     </div>
                     <div className={`w-10 h-10 rounded-xl ${color as string} flex items-center justify-center`}>
                       <StatIcon className="w-5 h-5 text-white" />
@@ -115,14 +77,14 @@ function SmartInvoicesMockup() {
               <div className="flex items-center justify-between mb-4">
                 <div>
                   <p className="font-semibold">Upload New Invoice</p>
-                  <p className="text-xs text-slate-500">Vendor: Patel Wholesale</p>
+                  <p className="text-xs text-slate-600">Vendor: Patel Wholesale</p>
                 </div>
-                <Upload className="w-5 h-5 text-emerald-600" />
+                <Upload className="w-5 h-5 text-emerald-700" />
               </div>
               <div className="rounded-xl border-2 border-dashed border-emerald-300 bg-emerald-50 p-5 text-center mb-4">
-                <FileText className="w-8 h-8 text-emerald-600 mx-auto mb-2" />
+                <FileText className="w-8 h-8 text-emerald-700 mx-auto mb-2" />
                 <p className="text-sm font-medium text-slate-700">invoice_march.pdf</p>
-                <p className="text-xs text-slate-500">OCR parsed supplier items</p>
+                <p className="text-xs text-slate-600">OCR parsed supplier items</p>
               </div>
               <div className="rounded-xl bg-slate-900 text-white p-4 flex items-center justify-between">
                 <div>
@@ -147,11 +109,11 @@ function SmartInvoicesMockup() {
                 ].map(([name, qty, status, confidence]) => (
                   <div key={name} className="grid grid-cols-[1fr_44px_78px_50px] gap-3 items-center px-4 py-3 border-b last:border-b-0 border-slate-100">
                     <p className="text-sm font-medium truncate">{name}</p>
-                    <p className="text-sm text-slate-500">{qty}</p>
+                    <p className="text-sm text-slate-600">{qty}</p>
                     <span className={`rounded-full px-2 py-1 text-[11px] text-center ${status === 'low stock' ? 'bg-amber-100 text-amber-700' : 'bg-emerald-100 text-emerald-700'}`}>
                       {status}
                     </span>
-                    <p className="text-sm font-medium text-emerald-600">{confidence}</p>
+                    <p className="text-sm font-medium text-emerald-700">{confidence}</p>
                   </div>
                 ))}
               </div>
@@ -163,9 +125,9 @@ function SmartInvoicesMockup() {
               <div className="flex items-center justify-between mb-4">
                 <div>
                   <p className="font-semibold">ML Demand Forecast</p>
-                  <p className="text-xs text-slate-500">Predicted demand vs current stock</p>
+                  <p className="text-xs text-slate-600">Predicted demand vs current stock</p>
                 </div>
-                <span className="text-xs text-emerald-600 font-medium">AI-powered</span>
+                <span className="text-xs text-emerald-700 font-medium">AI-powered</span>
               </div>
               <div className="flex items-end gap-3 h-28">
                 {[
@@ -181,7 +143,7 @@ function SmartInvoicesMockup() {
                       <span className="w-3 rounded-t bg-blue-500" style={{ height: `${demand as number}%` }} />
                       <span className="w-3 rounded-t bg-emerald-500" style={{ height: `${stock as number}%` }} />
                     </div>
-                    <span className="text-[10px] text-slate-500">{label as string}</span>
+                    <span className="text-[10px] text-slate-600">{label as string}</span>
                   </div>
                 ))}
               </div>
@@ -194,7 +156,7 @@ function SmartInvoicesMockup() {
                 </div>
                 <div>
                   <p className="font-semibold">WhatsApp Reorder</p>
-                  <p className="text-xs text-slate-500">Generated by supplier</p>
+                  <p className="text-xs text-slate-600">Generated by supplier</p>
                 </div>
               </div>
               <div className="rounded-xl bg-green-50 border border-green-100 p-4 text-sm text-slate-700">
@@ -231,17 +193,17 @@ function AltselfMockup() {
             </div>
           </div>
           <div className="px-3 py-3 border-b border-white/10">
-            <p className="text-[10px] uppercase tracking-[0.18em] text-zinc-500 mb-2">Quick actions</p>
+            <p className="text-[10px] uppercase tracking-[0.18em] text-zinc-400 mb-2">Quick actions</p>
             {['Competitive Brief', 'Vendor Memo', 'Market Brief', 'Labs Deck'].map((item, index) => (
-              <div key={item} className={`rounded-lg px-3 py-2 text-xs ${index === 0 ? 'bg-white/10 text-white' : 'text-zinc-500'}`}>
+              <div key={item} className={`rounded-lg px-3 py-2 text-xs ${index === 0 ? 'bg-white/10 text-white' : 'text-zinc-400'}`}>
                 {item}
               </div>
             ))}
           </div>
           <div className="min-h-0 flex-1 px-3 py-3">
-            <p className="text-[10px] uppercase tracking-[0.18em] text-zinc-500 mb-2">Saved chats</p>
+            <p className="text-[10px] uppercase tracking-[0.18em] text-zinc-400 mb-2">Saved chats</p>
             {['Retail AI research', 'Vendor memo', 'Pitch deck'].map((item, index) => (
-              <div key={item} className={`rounded-lg px-3 py-2 text-xs ${index === 0 ? 'bg-violet-500/20 text-white' : 'text-zinc-500'}`}>
+              <div key={item} className={`rounded-lg px-3 py-2 text-xs ${index === 0 ? 'bg-violet-500/20 text-white' : 'text-zinc-400'}`}>
                 <span className="block truncate">{item}</span>
                 <span className="text-[10px] text-zinc-600">{index + 3} messages</span>
               </div>
@@ -258,7 +220,7 @@ function AltselfMockup() {
             ].map(([Icon, label]) => {
               const NavIcon = Icon as typeof User;
               return (
-                <div key={label as string} className="flex items-center gap-2 rounded-lg px-3 py-2 text-xs text-zinc-500">
+                <div key={label as string} className="flex items-center gap-2 rounded-lg px-3 py-2 text-xs text-zinc-400">
                   <NavIcon className="w-4 h-4" />
                   <span>{label as string}</span>
                 </div>
@@ -275,7 +237,7 @@ function AltselfMockup() {
               </div>
               <div>
                 <p className="font-semibold">ALTSELF Briefs</p>
-                <p className="text-xs text-zinc-500">Reviewed business research runs.</p>
+                <p className="text-xs text-zinc-400">Reviewed business research runs.</p>
               </div>
             </div>
             <div className="flex flex-wrap gap-2 text-xs text-zinc-400">
@@ -299,14 +261,14 @@ function AltselfMockup() {
                 <div className="rounded-xl border border-white/10 bg-zinc-950 p-3">
                   <p className="text-sm text-zinc-300 mb-3">Create a competitive brief on our top three alternatives with risks and next moves.</p>
                   <div className="flex items-center justify-between">
-                    <span className="text-xs text-zinc-500">COPILOT - BALANCED - document export ready</span>
+                    <span className="text-xs text-zinc-400">COPILOT - BALANCED - document export ready</span>
                     <span className="rounded-lg bg-white text-black px-3 py-2 text-xs font-medium">Send</span>
                   </div>
                 </div>
               </div>
 
               <div className="rounded-xl border border-white/10 bg-white/[0.03] p-4">
-                <p className="text-xs uppercase tracking-[0.16em] text-zinc-500 mb-3">Execution summary</p>
+                <p className="text-xs uppercase tracking-[0.16em] text-zinc-400 mb-3">Execution summary</p>
                 <div className="space-y-3">
                   {[
                     ['Mode', 'COPILOT'],
@@ -315,7 +277,7 @@ function AltselfMockup() {
                     ['Status', 'Awaiting approval']
                   ].map(([label, value]) => (
                     <div key={label} className="flex items-center justify-between text-sm">
-                      <span className="text-zinc-500">{label}</span>
+                      <span className="text-zinc-400">{label}</span>
                       <span className="text-white">{value}</span>
                     </div>
                   ))}
@@ -338,7 +300,7 @@ function AltselfMockup() {
                       <span className={`w-2 h-2 rounded-full ${index < 2 ? 'bg-emerald-300' : 'bg-zinc-600'}`} />
                     </div>
                     <p className="font-medium text-sm">{name as string}</p>
-                    <p className="text-xs text-zinc-500 mt-2 leading-relaxed">{brief as string}</p>
+                    <p className="text-xs text-zinc-400 mt-2 leading-relaxed">{brief as string}</p>
                   </div>
                 );
               })}
@@ -354,7 +316,7 @@ function AltselfMockup() {
                   <div className="rounded-xl border border-violet-400/20 bg-violet-400/10 p-3 text-sm">
                     Plan ready. Review tasks, assumptions, model choices, and estimated cost before execution.
                   </div>
-                  <div className="flex items-center gap-2 text-xs text-zinc-500">
+                  <div className="flex items-center gap-2 text-xs text-zinc-400">
                     <Download className="w-4 h-4" />
                     PPTX / DOCX export available after run
                   </div>
@@ -396,7 +358,7 @@ function LostFoundMockup() {
           </div>
           <div>
             <p className="text-sm font-bold tracking-wide">LOST & FOUND</p>
-            <p className="text-xs text-white/40">AI-powered recovery dashboard</p>
+            <p className="text-xs text-white/60">AI-powered recovery dashboard</p>
           </div>
         </div>
         <Bell className="w-5 h-5 text-white/50" />
@@ -442,7 +404,7 @@ function LostFoundMockup() {
           <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-3">
             <div>
               <p className="text-2xl font-bold">Matches</p>
-              <p className="text-sm text-white/45">Review and manage item matches</p>
+              <p className="text-sm text-white/60">Review and manage item matches</p>
             </div>
             <div className="flex gap-2">
               {['All', 'Pending', 'Resolved'].map((filter, index) => (
@@ -465,7 +427,7 @@ function LostFoundMockup() {
                 <div key={label as string} className="rounded-2xl bg-white/5 border border-white/10 p-4">
                   <div className="flex items-center justify-between">
                     <div>
-                      <p className="text-xs text-white/45">{label as string}</p>
+                      <p className="text-xs text-white/60">{label as string}</p>
                       <p className="text-3xl font-bold mt-1">{value as string}</p>
                     </div>
                     <div className={`w-10 h-10 rounded-xl bg-gradient-to-br ${gradient as string} flex items-center justify-center`}>
@@ -484,7 +446,7 @@ function LostFoundMockup() {
               </div>
               <div>
                 <p className="font-medium">AI Analysis Complete</p>
-                <p className="text-xs text-white/40">Powered by MobileNet fallback and production AI hooks</p>
+                <p className="text-xs text-white/60">Powered by MobileNet fallback and production AI hooks</p>
               </div>
               <CheckCircle className="w-5 h-5 text-green-400 ml-auto" />
             </div>
@@ -495,7 +457,7 @@ function LostFoundMockup() {
                 ['Color', 'Blue']
               ].map(([label, value]) => (
                 <div key={label} className="rounded-xl bg-black/30 p-3 text-center">
-                  <p className="text-[10px] text-white/40 mb-1">{label}</p>
+                  <p className="text-[10px] text-white/60 mb-1">{label}</p>
                   <p className="text-sm font-medium truncate">{value}</p>
                 </div>
               ))}
@@ -505,30 +467,30 @@ function LostFoundMockup() {
           <div className="rounded-2xl bg-white border border-slate-200 p-4 text-slate-900">
             <div className="flex flex-col md:flex-row items-stretch md:items-center gap-4">
               <div className="flex-1 rounded-xl bg-red-50 p-4">
-                <p className="text-xs font-medium text-slate-500 mb-2">Lost Item</p>
+                <p className="text-xs font-medium text-slate-600 mb-2">Lost Item</p>
                 <div className="flex items-center gap-3">
                   <div className="w-14 h-14 rounded-lg bg-red-100 flex items-center justify-center">
                     <Search className="w-5 h-5 text-red-500" />
                   </div>
                   <div>
                     <p className="text-sm font-medium">Blue water bottle</p>
-                    <p className="text-xs text-slate-500">Library - Navy</p>
+                    <p className="text-xs text-slate-600">Library - Navy</p>
                   </div>
                 </div>
               </div>
               <div className="md:w-24 text-center">
                 <p className="text-2xl font-bold text-green-600">86%</p>
-                <p className="text-xs text-slate-500">Confidence</p>
+                <p className="text-xs text-slate-600">Confidence</p>
               </div>
               <div className="flex-1 rounded-xl bg-blue-50 p-4">
-                <p className="text-xs font-medium text-slate-500 mb-2">Found Item</p>
+                <p className="text-xs font-medium text-slate-600 mb-2">Found Item</p>
                 <div className="flex items-center gap-3">
                   <div className="w-14 h-14 rounded-lg bg-blue-100 flex items-center justify-center">
                     <Package className="w-5 h-5 text-blue-500" />
                   </div>
                   <div>
                     <p className="text-sm font-medium">Bottle near cafeteria</p>
-                    <p className="text-xs text-slate-500">Detected: Blue</p>
+                    <p className="text-xs text-slate-600">Detected: Blue</p>
                   </div>
                 </div>
               </div>
@@ -566,40 +528,42 @@ function ProjectPreview({ kind }: { kind: ProjectKind }) {
   );
 }
 
-function ProjectItem({ project }: { project: typeof projects[0] }) {
+function ProjectItem({ project, index }: { project: Project; index: number }) {
   const ref = useInViewAnimation<HTMLDivElement>(0.1);
 
   return (
-    <article ref={ref} className="w-full grid grid-cols-1 lg:grid-cols-[0.9fr_1.3fr] gap-6 lg:gap-10 items-start">
-      <div className="flex flex-col gap-8 rounded-[32px] bg-white dark:bg-[#0D212C] border border-gray-100 dark:border-white/10 p-6 md:p-8 shadow-[0_4px_16px_rgba(0,0,0,0.06)] dark:shadow-none">
+    <article ref={ref} className="editorial-project">
+      <div className="editorial-project-copy">
         <div>
-          <p className="font-mono text-xs uppercase tracking-[0.16em] text-[#273C46]/60 dark:text-[#E0EBF0]/60 mb-4">{project.kicker}</p>
-          <h3 className="font-['PP_Mondwest'] text-3xl md:text-4xl font-semibold text-[#051A24] dark:text-white leading-none">
+          <p className="editorial-project-index">0{index + 1} / 0{projects.length}</p>
+          <p className="editorial-project-kicker">{project.kicker}</p>
+          <h3 className="editorial-project-title">
             {project.title}
           </h3>
         </div>
 
-        <div className="flex flex-col gap-5">
+        <div className="editorial-project-details">
           {[
             ['Problem', project.problem],
             ['Solution', project.solution],
-            ['Impact', project.impact],
+            ['Context & intent', project.impact],
             ['Role', project.role]
           ].map(([label, value]) => (
             <div key={label}>
-              <p className="font-mono text-xs uppercase tracking-[0.16em] text-[#273C46]/60 dark:text-[#E0EBF0]/60 mb-2">{label}</p>
-              <p className="text-sm md:text-base text-[#051A24] dark:text-[#E0EBF0] leading-relaxed">{value}</p>
+              <p>{label}</p>
+              <span>{value}</span>
             </div>
           ))}
         </div>
 
-        <a href="#contact" className="inline-flex items-center gap-2 text-sm font-medium text-[#051A24] dark:text-white hover:opacity-70 transition-opacity">
-          Talk about this kind of build
+        <a href={`/projects/${project.slug}/`} className="editorial-project-link">
+          Read case study
           <ArrowRight className="w-4 h-4" />
         </a>
       </div>
 
-      <div className="overflow-hidden rounded-[32px] shadow-lg dark:shadow-[0_10px_30px_rgba(0,0,0,0.5)] border border-black/5 dark:border-white/10">
+      <div className="editorial-project-preview">
+        <p className="px-6 py-3 text-sm text-slate-600 dark:text-slate-300">Interface concept · Illustrative data</p>
         <ProjectPreview kind={project.kind} />
       </div>
     </article>
@@ -608,17 +572,13 @@ function ProjectItem({ project }: { project: typeof projects[0] }) {
 
 export function ProjectsSection() {
   return (
-    <section className="max-w-[1200px] mx-auto px-6 py-16 pb-28 flex flex-col gap-10 md:gap-12">
-      <div className="max-w-3xl">
-        <p className="font-mono text-xs uppercase tracking-[0.2em] text-[#273C46]/60 dark:text-[#E0EBF0]/60 mb-4">
-          Selected work
-        </p>
-        <h2 className="font-['PP_Mondwest'] text-[40px] md:text-[56px] text-[#0D212C] dark:text-white leading-none">
-          Projects with a problem to solve.
-        </h2>
+    <section className="editorial-projects">
+      <div className="editorial-projects-heading">
+        <p>Selected work · 2024—26</p>
+        <h2>AI projects.<br /><em>From idea to build.</em></h2>
       </div>
-      {projects.map((project) => (
-        <ProjectItem key={project.title} project={project} />
+      {projects.map((project, index) => (
+        <ProjectItem key={project.title} project={project} index={index} />
       ))}
     </section>
   );

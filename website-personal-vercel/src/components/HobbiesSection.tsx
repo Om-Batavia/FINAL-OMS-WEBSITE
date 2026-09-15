@@ -46,7 +46,6 @@ export function HobbiesSection() {
                 ref={cardRefs[i]}
                 role={hobby.href ? "link" : undefined}
                 tabIndex={hobby.href ? 0 : undefined}
-                aria-label={hobby.href ? "View Om's karting photos" : undefined}
                 onClick={() => {
                   if (hobby.href) window.location.hash = hobby.href;
                 }}

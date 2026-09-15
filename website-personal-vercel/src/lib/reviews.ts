@@ -6,12 +6,13 @@ export interface VisitorReview {
   text: string;
   createdAt: string;
 }
-
 export interface NewVisitorReview {
   name: string;
   role: string;
   rating: number;
   text: string;
+  website: string;
+  startedAt: number;
 }
 
 interface SupabaseReviewRow {
@@ -23,10 +24,8 @@ interface SupabaseReviewRow {
   created_at: string;
 }
 
-const SUPABASE_URL = import.meta.env.VITE_SUPABASE_URL;
-const SUPABASE_ANON_KEY = import.meta.env.VITE_SUPABASE_ANON_KEY;
-
-export const hasSharedReviews = Boolean(SUPABASE_URL && SUPABASE_ANON_KEY);
+const REVIEW_API_URL = import.meta.env.VITE_REVIEW_API_URL
+  || 'https://xvjegzkhztuztamkwsqa.supabase.co/functions/v1/portfolio-reviews';
 
 function reviewFromRow(row: SupabaseReviewRow): VisitorReview {
   return {
@@ -39,63 +38,26 @@ function reviewFromRow(row: SupabaseReviewRow): VisitorReview {
   };
 }
 
-function getHeaders() {
-  if (!SUPABASE_ANON_KEY) {
-    throw new Error('Supabase anon key is missing.');
+async function request(path: string, init?: RequestInit) {
+  const response = await fetch(`${REVIEW_API_URL}${path}`, init);
+  const body = await response.json().catch(() => ({}));
+
+  if (!response.ok) {
+    throw new Error(typeof body.error === 'string' ? body.error : 'Review service unavailable.');
   }
 
-  return {
-    apikey: SUPABASE_ANON_KEY,
-    Authorization: `Bearer ${SUPABASE_ANON_KEY}`,
-    'Content-Type': 'application/json'
-  };
+  return body;
 }
 
 export async function fetchSharedReviews() {
-  if (!SUPABASE_URL) {
-    throw new Error('Supabase URL is missing.');
-  }
-
-  const response = await fetch(
-    `${SUPABASE_URL}/rest/v1/portfolio_reviews?select=id,name,role,rating,review_text,created_at&approved=eq.true&order=created_at.desc`,
-    { headers: getHeaders() }
-  );
-
-  if (!response.ok) {
-    throw new Error('Could not load shared reviews.');
-  }
-
-  const rows = (await response.json()) as SupabaseReviewRow[];
-  return rows.map(reviewFromRow);
+  const body = await request('');
+  return ((body.reviews || []) as SupabaseReviewRow[]).map(reviewFromRow);
 }
 
 export async function createSharedReview(review: NewVisitorReview) {
-  if (!SUPABASE_URL) {
-    throw new Error('Supabase URL is missing.');
-  }
-
-  const response = await fetch(
-    `${SUPABASE_URL}/rest/v1/portfolio_reviews?select=id,name,role,rating,review_text,created_at`,
-    {
-      method: 'POST',
-      headers: {
-        ...getHeaders(),
-        Prefer: 'return=representation'
-      },
-      body: JSON.stringify({
-        name: review.name,
-        role: review.role || null,
-        rating: review.rating,
-        review_text: review.text,
-        approved: true
-      })
-    }
-  );
-
-  if (!response.ok) {
-    throw new Error('Could not publish this review.');
-  }
-
-  const rows = (await response.json()) as SupabaseReviewRow[];
-  return reviewFromRow(rows[0]);
+  await request('', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(review)
+  });
 }

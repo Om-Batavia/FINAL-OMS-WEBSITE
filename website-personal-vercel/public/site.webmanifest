@@ -1,0 +1,18 @@
+{
+  "name": "Om Batavia — AI Systems Builder",
+  "short_name": "Om Batavia",
+  "description": "AI systems, product engineering, and founder portfolio of Om Batavia.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#030404",
+  "theme_color": "#051A24",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}
+

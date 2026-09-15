@@ -70,12 +70,16 @@ export function PhotoStorySection() {
                     src={photo.src}
                     alt=""
                     aria-hidden="true"
+                    loading="lazy"
+                    decoding="async"
                     className="absolute inset-0 h-full w-full scale-110 object-cover blur-xl opacity-45"
                   />
                 )}
                 <img
                   src={photo.src}
                   alt={photo.title}
+                  loading="lazy"
+                  decoding="async"
                   className={`relative z-10 h-full w-full transition-transform duration-500 group-hover:scale-105 ${photo.fit === 'contain' ? 'object-contain p-4 md:p-5' : 'object-cover'}`}
                 />
               </div>
