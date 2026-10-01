@@ -54,7 +54,7 @@ export default function App() {
                 <span>BATAVIA</span>
               </h1>
               <div className="race-intro">
-                <p>Student founder building AI for invoice processing and model routing. Founder of Smart Invoices and ALTSELF; CEO of TEC Teen Shop.</p>
+                <p>Student at The Riverside School, Ahmedabad, building AI for invoice processing and model routing. Founder of Smart Invoices and ALTSELF; CEO of TEC Teen Shop.</p>
                 <a href="#projects" aria-label="Explore selected projects" className="race-scroll">
                   <ArrowDownRight aria-hidden="true" />
                 </a>

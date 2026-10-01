@@ -29,6 +29,7 @@ export function ProjectPage({ project }: { project: Project }) {
         <p className="mb-5 font-mono text-xs uppercase tracking-[0.2em] text-cyan-300">{project.kicker}</p>
         <h1 className="max-w-4xl font-['PP_Mondwest'] text-5xl leading-none md:text-7xl">{project.title}</h1>
         <p className="mt-8 max-w-3xl text-xl leading-relaxed text-white/70">{project.seoDescription}</p>
+        <p className="mt-5 text-sm text-white/70">Built by <a href="/#about" className="underline underline-offset-4">Om Batavia</a>, a student at The Riverside School, Ahmedabad.</p>
 
         <div className="mt-16 grid gap-5 md:grid-cols-2">
           {labels.map((label) => (

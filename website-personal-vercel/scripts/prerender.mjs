@@ -9,24 +9,13 @@ const template = await readFile(resolve(dist, 'index.html'), 'utf8');
 const { render, seoRoutes } = await import(pathToFileURL(resolve(serverDir, 'entry-server.js')));
 
 const origin = 'https://www.ombatavia.com';
-const person = {
-  '@type': 'Person',
-  '@id': `${origin}/#person`,
-  name: 'Om Batavia',
-  url: `${origin}/`,
-  image: `${origin}/og-image.jpg`,
-  jobTitle: 'AI systems builder and student entrepreneur',
-  sameAs: [
-    'https://www.linkedin.com/in/om-batavia-071bb0346/',
-    'https://github.com/Om-Batavia',
-    'https://www.instagram.com/omraces/'
-  ]
-};
+const profileSchema = JSON.parse(template.match(/<script id="structured-data" type="application\/ld\+json">([\s\S]*?)<\/script>/)[1]);
+const person = profileSchema['@graph'].find((entity) => entity['@type'] === 'Person');
 
 function replaceMeta(html, route) {
   const url = `${origin}${route.path}`;
   const schema = route.path === '/'
-    ? JSON.parse(html.match(/<script id="structured-data" type="application\/ld\+json">([\s\S]*?)<\/script>/)[1])
+    ? profileSchema
     : {
         '@context': 'https://schema.org',
         '@graph': [

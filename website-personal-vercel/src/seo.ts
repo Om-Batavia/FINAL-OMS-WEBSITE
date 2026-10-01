@@ -11,8 +11,8 @@ export interface SeoRoute {
 export const seoRoutes: SeoRoute[] = [
   {
     path: '/',
-    title: 'Om Batavia — AI Systems Builder & Student Entrepreneur',
-    description: 'Om Batavia builds practical AI systems for model routing, invoice automation, retail operations, and visual matching. Explore projects, experience, and collaborations.',
+    title: 'Om Batavia | The Riverside School Student & AI Builder',
+    description: 'Om Batavia is a student at The Riverside School, Ahmedabad, and founder of ALTSELF and Smart Invoices. Explore his AI projects, student leadership, and experience.',
     type: 'website'
   },
   ...projects.map((project) => ({

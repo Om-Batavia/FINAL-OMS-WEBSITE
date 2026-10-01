@@ -18,7 +18,21 @@ for (const [path, file] of pages) {
   assert(/<meta name="description" content=".{80,180}"/.test(html), `${path} description length invalid`);
   const json = html.match(/<script id="structured-data" type="application\/ld\+json">([\s\S]*?)<\/script>/);
   assert(json, `${path} structured data missing`);
-  JSON.parse(json[1]);
+  const schema = JSON.parse(json[1]);
+  const person = schema['@graph'].find((entity) => entity['@type'] === 'Person');
+  assert.equal(person.name, 'Om Batavia');
+  assert.equal(person.affiliation['@type'], 'School');
+  assert.equal(person.affiliation.name, 'The Riverside School');
+  assert.equal(person.affiliation.address.addressLocality, 'Ahmedabad');
+  const body = html.split('<body>')[1];
+  assert(body.includes('The Riverside School'), `${path} must visibly support the school affiliation`);
+  if (path === '/') {
+    const profile = schema['@graph'].find((entity) => entity['@type'] === 'ProfilePage');
+    assert.equal(profile.name, html.match(/<title>(.*?)<\/title>/)[1]);
+    assert.equal(profile.description, html.match(/<meta name="description" content="([^"]*)"/)[1]);
+    assert(body.includes('href="https://schoolriverside.com/"'), 'School source link missing');
+    assert(body.includes('activity-7458438090014236672-v45v'), 'Leadership coverage link missing');
+  }
   const ids = [...html.matchAll(/\sid="([^"]+)"/g)].map((match) => match[1]);
   assert.equal(new Set(ids).size, ids.length, `${path} has duplicate element IDs`);
   for (const [, id] of html.matchAll(/href="#([^"]+)"/g)) {
