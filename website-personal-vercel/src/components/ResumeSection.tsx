@@ -129,14 +129,21 @@ export function ResumeSection() {
         {/* Summary */}
         <div ref={refSummary} className="mb-20 text-base md:text-lg text-[#051A24] dark:text-[#E0EBF0] leading-relaxed">
           <p>
-            Om Batavia is a student at <a href="https://schoolriverside.com/" className="underline underline-offset-4">The Riverside School in Ahmedabad</a>, founder of ALTSELF and Smart Invoices, and CEO of TEC Teen Shop. His work combines AI projects, student leadership, and practical business experience.
+            Om Batavia is a student at <a href="https://schoolriverside.com/" className="underline underline-offset-4">The Riverside School in Ahmedabad</a>, founder of ALTSELF and Smart Invoices, and CEO of TEC Teen Shop. As a student entrepreneur and AI developer, he combines software development, student leadership, and practical business experience.
           </p>
           <h3 className="mt-8 mb-4 text-xl font-semibold">Student leadership at Riverside</h3>
           <p>
-            As Music Club President and Debate Club President, Om helps organize performances, rehearsals, and debate preparation. During his time on the Innovation Team in 2025, he helped plan school events and inter-school competitions and taught students about AI.
+            As Music Club President and Debate Club President, Om helps organize student performances, music rehearsals, and debate preparation. These roles bring together public speaking, communication, event planning, and creative leadership. During his time on the Innovation Team in 2025, he helped plan school events and inter-school competitions and taught and mentored students in artificial intelligence concepts and practical applications.
           </p>
           <p className="mt-4">
-            Beyond school, he has led 15 peers at Growth Valley Community and built AI workflows for model routing and invoice processing. Explore <a href="/projects/altself/" className="underline underline-offset-4">ALTSELF</a> and <a href="/projects/smart-invoices/" className="underline underline-offset-4">Smart Invoices</a> for the problems, solutions, and his role in each project.
+            Beyond school, he has led 15 peers at Growth Valley Community. His work at TEC Teen Shop spans supplier sourcing, vendor negotiation, shipping, and business operations. This student entrepreneurship experience connects product ideas with the day-to-day work of running a team and fulfilling orders.
+          </p>
+          <h3 className="mt-8 mb-4 text-xl font-semibold">Artificial intelligence and software projects</h3>
+          <p>
+            His portfolio covers three practical uses of AI: <a href="/projects/smart-invoices/" className="underline underline-offset-4">invoice processing and retail inventory management with Smart Invoices</a>, <a href="/projects/altself/" className="underline underline-offset-4">AI model routing with ALTSELF</a>, and <a href="/projects/ai-lost-and-found/" className="underline underline-offset-4">school lost-and-found item matching</a>. Each case study explains the problem, implementation, and Om’s role in building the software.
+          </p>
+          <p className="mt-4">
+            Across these projects, Om works with Python, FastAPI, React, and databases including PostgreSQL and SQLite. His full-stack development work covers web interfaces, backend APIs, authentication, and workflows for local retailers and school communities. The focus is on making information easier to use, from supplier invoices and stock reports to lost-item records.
           </p>
           <p className="mt-6 text-sm">
             In its <a href="https://www.linkedin.com/posts/growthvalleycommunity_growthvalley-tec-tecteenshop-activity-7458438090014236672-v45v" className="underline underline-offset-4">TEC Teen Shop leadership feature</a>, Growth Valley Community identifies Om as a Grade 12 student at Riverside and an Intern CEO of its student-run business.
