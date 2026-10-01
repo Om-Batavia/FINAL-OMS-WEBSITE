@@ -101,7 +101,7 @@ const growthProgression = [
 ];
 
 const education = [
-  { school: "The Riverside School", dates: "2021 - 2027" },
+  { school: "The Riverside School, Ahmedabad", dates: "2021 - 2027" },
   { school: "Good Shepherd International School", dates: "Jan 2018 - Mar 2021" },
   { school: "Eklavya School, Ahmedabad", dates: "Jan 2012 - Dec 2018" }
 ];
@@ -129,7 +129,17 @@ export function ResumeSection() {
         {/* Summary */}
         <div ref={refSummary} className="mb-20 text-base md:text-lg text-[#051A24] dark:text-[#E0EBF0] leading-relaxed">
           <p>
-            Student at The Riverside School, founder of ALTSELF and Smart Invoices, and CEO of TEC Teen Shop. Building AI workflows for model routing and invoice processing. Led 15 peers at Growth Valley Community and taught students about AI.
+            Om Batavia is a student at <a href="https://schoolriverside.com/" className="underline underline-offset-4">The Riverside School in Ahmedabad</a>, founder of ALTSELF and Smart Invoices, and CEO of TEC Teen Shop. His work combines AI projects, student leadership, and practical business experience.
+          </p>
+          <h3 className="mt-8 mb-4 text-xl font-semibold">Student leadership at Riverside</h3>
+          <p>
+            As Music Club President and Debate Club President, Om helps organize performances, rehearsals, and debate preparation. During his time on the Innovation Team in 2025, he helped plan school events and inter-school competitions and taught students about AI.
+          </p>
+          <p className="mt-4">
+            Beyond school, he has led 15 peers at Growth Valley Community and built AI workflows for model routing and invoice processing. Explore <a href="/projects/altself/" className="underline underline-offset-4">ALTSELF</a> and <a href="/projects/smart-invoices/" className="underline underline-offset-4">Smart Invoices</a> for the problems, solutions, and his role in each project.
+          </p>
+          <p className="mt-6 text-sm">
+            In its <a href="https://www.linkedin.com/posts/growthvalleycommunity_growthvalley-tec-tecteenshop-activity-7458438090014236672-v45v" className="underline underline-offset-4">TEC Teen Shop leadership feature</a>, Growth Valley Community identifies Om as a Grade 12 student at Riverside and an Intern CEO of its student-run business.
           </p>
         </div>
 
